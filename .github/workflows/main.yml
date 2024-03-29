@@ -9,12 +9,13 @@ jobs:
     steps:
        - name: this is first step
          run: |
-           echo "hello from step1"
+           echo $HOSTNAME
            sleep 30
        - name: second step
          run: |
-           echo " hello from step2"
+           uname -a
            cat /etc/os-release
+           touch /tmp/gagandeep
            sleep 30
        - run: echo "step 3"
       
