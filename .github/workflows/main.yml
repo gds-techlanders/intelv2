@@ -6,10 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: this is first step
-         run: echo "hello from step1"
+         run: |
+           echo "hello from step1"
+           sleep 30
        - name: second step
          run: |
            echo " hello from step2"
            cat /etc/os-release
+           sleep 30
        - run: echo "step 3"
       
