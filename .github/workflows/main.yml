@@ -14,7 +14,8 @@ jobs:
     steps:
        - name: this is first step
          run: |
-           echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
+           echo $greetings! $name $last_name is the owner of $GITHUB_REPOSITORY repo. Reachout to $name for any updates.
+           echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
            sleep 30
          env:
             name: Gagandeep
@@ -32,6 +33,7 @@ jobs:
        - name: this is first step
          run: |
            echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
+           echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
            sleep 30
        - name: second step
          run: |
