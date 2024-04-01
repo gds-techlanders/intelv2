@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       last_name: singh
+      greetings: welcome
     steps:
        - name: this is first step
          run: |
@@ -17,6 +18,7 @@ jobs:
            sleep 30
          env:
             name: Gagandeep
+            greetings: "GoodMorning"
        - name: second step
          run: |
            uname -a
