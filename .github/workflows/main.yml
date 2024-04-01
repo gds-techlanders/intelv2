@@ -3,6 +3,8 @@ name: workflow1
 on: 
   workflow_dispatch:
   push:
+env:
+ greetings: hello
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,14 +13,14 @@ jobs:
     steps:
        - name: this is first step
          run: |
-           echo $name $last_name is the owner of this repo. Reachout to $name for any updates.
+           echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
            sleep 30
          env:
             name: Gagandeep
        - name: second step
          run: |
            uname -a
-           echo $name $last_name is the owner of this repo. Reachout to $name for any updates.
+           echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
            touch /tmp/gagandeep
            sleep 30
        - run: echo "step 3"
@@ -27,7 +29,7 @@ jobs:
     steps:
        - name: this is first step
          run: |
-           echo $name $last_name is the owner of this repo. Reachout to $name for any updates.
+           echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
            sleep 30
        - name: second step
          run: |
