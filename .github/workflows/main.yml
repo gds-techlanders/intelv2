@@ -8,6 +8,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: dev
     env:
       last_name: singh
       greetings: welcome
@@ -16,6 +17,7 @@ jobs:
          run: |
            echo $greetings! $name $last_name is the owner of $GITHUB_REPOSITORY repo for application ${{ vars.APP_NAME }} . Reachout to $name for any updates.
            echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
+           echo ${{ vars.APP_NAME }} is running on {{ vars.SERVER_NAME }}
            sleep 30
          env:
             name: Gagandeep
@@ -27,13 +29,15 @@ jobs:
            touch /tmp/gagandeep
            sleep 30
        - run: echo "step 3"
-  test:
+  deploy:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
        - name: this is first step
          run: |
            echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
            echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
+           echo ${{ vars.APP_NAME }} is running on {{ vars.SERVER_NAME }}
            sleep 30
        - name: second step
          run: |
