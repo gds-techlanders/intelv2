@@ -17,8 +17,8 @@ jobs:
          run: |
            echo $greetings! $name $last_name is the owner of $GITHUB_REPOSITORY repo for application ${{ vars.APP_NAME }} . Reachout to $name for any updates.
            echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
-           echo ${{ vars.APP_NAME }} is running on {{ vars.SERVER_NAME }}
-           sleep 30
+           echo ${{ vars.APP_NAME }} is running on ${{ vars.SERVER_NAME }}
+           sleep 10
          env:
             name: Gagandeep
             greetings: "GoodMorning"
@@ -27,7 +27,7 @@ jobs:
            uname -a
            echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
            touch /tmp/gagandeep
-           sleep 30
+           sleep 10
        - run: echo "step 3"
   deploy:
     runs-on: ubuntu-latest
@@ -37,12 +37,12 @@ jobs:
          run: |
            echo $greetings! $name $last_name is the owner of this repo. Reachout to $name for any updates.
            echo This step is running on $RUNNER_OS on instance $RUNNER_NAME
-           echo ${{ vars.APP_NAME }} is running on {{ vars.SERVER_NAME }}
-           sleep 30
+           echo ${{ vars.APP_NAME }} is running on ${{ vars.SERVER_NAME }}
+           sleep 10
        - name: second step
          run: |
            uname -a
            cat /etc/os-release
            touch /tmp/gagandeep
-           sleep 30
+           sleep 10
        - run: echo "step 3"
