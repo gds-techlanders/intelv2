@@ -5,7 +5,7 @@ on:
   push:
 jobs:
   build:
-    runs-on: gagan
+    runs-on: ubuntu-latest
     steps:
        - name: this is first step
          run: |
@@ -18,4 +18,17 @@ jobs:
            touch /tmp/gagandeep
            sleep 30
        - run: echo "step 3"
-      
+  test:
+    runs-on: ubuntu-latest
+    steps:
+       - name: this is first step
+         run: |
+           echo $HOSTNAME
+           sleep 30
+       - name: second step
+         run: |
+           uname -a
+           cat /etc/os-release
+           touch /tmp/gagandeep
+           sleep 30
+       - run: echo "step 3"
