@@ -9,7 +9,9 @@ jobs:
        - name: this is first build step
          run: echo hello from step 1
        - name: this is Second build step
-         run: echo hello from step 2
+         run: |
+           sleep 30
+           ech hello from step 2
        - name: this is Third build step
          run: echo hello from step 2
   test:
@@ -18,6 +20,8 @@ jobs:
        - name: this is first test step
          run: echo hello from step 1
        - name: this is Second test step
-         run: echo hello from step 2
+         run: |
+           sleep 30
+           echo hello from step 2
 
          
