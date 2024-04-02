@@ -11,23 +11,22 @@ jobs:
        - name: this is Second build step
          run: |
            sleep 10
-           echo hello from step 2
+           ech hello from step 2
        - name: this is Third build step
          run: echo hello from step 2
   test:
     runs-on: ubuntu-latest
-    continue-on-error: true
     needs: build
     steps:
        - name: this is first test step
-         run: ech hello from step 1
-         continue-on-error: true
+         run: echo hello from step 1
        - name: this is Second test step
          run: |
            sleep 10
            echo hello from step 2
   stage:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: test
     steps:
        - name: this is first stage step
