@@ -11,7 +11,7 @@ jobs:
        - name: this is Second build step
          run: |
            sleep 30
-           echo hello from step 2
+           ec hello from step 2
        - name: this is Third build step
          run: echo hello from step 2
   test:
