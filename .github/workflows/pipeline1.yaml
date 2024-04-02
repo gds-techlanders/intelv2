@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+       - name: step zero
+         uses: actions/checkout@v4.1.2
        - name: this is first build step
-         run: echo hello from step 1
+         run: ls -l
        - name: this is Second build step
          run: |
            sleep 10
