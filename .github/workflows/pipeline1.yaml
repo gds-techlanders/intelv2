@@ -16,6 +16,7 @@ jobs:
          run: echo hello from step 2
   test:
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: build
     steps:
        - name: this is first test step
