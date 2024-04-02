@@ -21,6 +21,7 @@ jobs:
     steps:
        - name: this is first test step
          run: ech hello from step 1
+         continue-on-error: true
        - name: this is Second test step
          run: |
            sleep 10
