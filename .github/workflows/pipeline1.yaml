@@ -19,9 +19,10 @@ jobs:
            exit 1
            echo hello from step 2
        - name: this is Third build step
+         id: step3
          run: echo hello from step 2
        - name: debug step
-         if: ${{ failure() }}
+         if: ${{ failure() && steps.step3.conclusion == 'failure' }}
          run: echo "Job got failed"
   test:
     runs-on: ubuntu-latest
